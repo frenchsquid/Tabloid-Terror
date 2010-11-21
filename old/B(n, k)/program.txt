@@ -1,0 +1,159 @@
+ with(combinat):
+ with(linalg):
+ 
+kernelopts(printbytes=false);
+ len := proc(sets)
+   local x, total:
+ 
+   total := 0:
+   for x in sets do
+     total := total + 1:
+   od:
+   total:
+ end:
+ 
+ testchain := proc(start, element,k)
+   local x, y,stuff,  flag1, flag2:
+   
+   flag1 := true:
+   for x in start do
+     if (flag1=true) then
+       flag2 := false:
+       stuff := powerset(element) minus {element}: 
+       for y in (stuff) do
+         if (x=y) then
+           flag2 := true:
+         fi:
+       od:
+       flag1 := flag2:
+     fi:
+   od:    
+   if (len(element minus start[-1]) > k) then 
+     flag1 := false:
+   fi:     
+   
+   flag1:
+ end:
+ 
+ chain := proc(goal, start, subsets,k, last)
+   local y,Answer:
+   
+   Answer:={}:
+   if (len(start)=goal-1) then 
+        
+       if (testchain(start,last,k)=true) then
+         Answer := Answer union {[op(start),last]}:
+       fi:
+  else
+     for y in subsets do
+       if (testchain(start,y,k)=true) then
+         Answer := Answer union chain(goal, [op(start),y],subsets,k,last):
+       fi:
+     od:
+   fi:
+   Answer:
+ end:
+ 
+
+ Find := proc(element, basis)
+   local flag, index, loop:
+ 
+   index := 0:
+   flag := true:
+   for loop in basis
+ do    if (flag = true) then 
+       index := index + 1:
+       if (element = loop) then 
+         flag := false:
+       fi:
+     fi:
+   od:
+ index:
+ end:
+
+ IsSubset := proc(A,B)
+   local testelement, flag:
+   
+  flag := true:
+   for testelement in A do 
+     if (len(B) = len(B minus {testelement})) then 
+       flag := false:
+     fi:
+   od:
+   flag:
+ end:
+ delta := proc(n, k,l)
+   local testloop, newchain, fullset, Answer, loop, index, element, basisl, basislminus1,flag:
+ 
+   fullset := {}:
+   for loop from 1 to n do
+     fullset := fullset union {loop}
+   od:
+ 
+     
+   basisl := convert(chain(l+2,[{}],powerset(n) minus {fullset, {}},k,fullset), list):
+   basislminus1 := convert(chain(l+1, [{}], powerset(n) minus {fullset,{}}, k,fullset), list):
+   if (basisl={}) then
+     basisl:={[]}:
+   fi:
+   if (basislminusl={}) then
+     basislminus1:={[]}:
+   fi: 
+  
+   Answer:=matrix(len(basislminus1),len(basisl)):
+   for loop from 1 to len(basislminus1) do
+     for testloop from 1 to len(basisl) do
+       Answer[loop,testloop] := 0:
+     od:
+   od:
+   index := 0:
+   for element in basisl do
+     index := index + 1: 
+     for loop from 2 to len(element)-1 do
+       newchain := [op(element[1..(loop-1)]),op(element[loop+1..len(element)])]:
+       
+       flag := true:
+       for testloop from 1 to len(newchain)-1 do
+          if ( (not(IsSubset(newchain[testloop],newchain[testloop+1]))) or 
+               (len(newchain[testloop+1] minus newchain[testloop]) >k)) then
+            flag := false:
+          fi:
+          
+       od:
+       if (flag = true) then    
+         Answer[Find(newchain,basislminus1),index] := (-1)^(loop+1):
+       fi:
+     od:
+   od:
+  
+   Answer:
+ end:
+ 
+ 
+ Hom := proc(n, k, l)
+   local Answer, bound, cycles:
+ 
+   if (l=n-2) then
+     kernel(delta(n,k,l+1),Answer):
+   elif(l>0) then 
+     colspace(delta(n,k,l+2), bound):
+     kernel(delta(n,k,l+1), cycles):
+     Answer := cycles - bound:
+   else
+     colspace(delta(n,k,l+2), bound):
+     if(bound=0) then
+       cycles := 0:
+     else
+       cycles := coldim(delta(n,k,l+1)):
+     fi:
+     Answer := cycles - bound:
+   fi:
+   Answer:
+ end:
+
+    for k from 1 to 5 do
+      for l from 0 to 6-2 do
+        print(Hom(6,k,l)):
+      od:
+    od;
+quit ;

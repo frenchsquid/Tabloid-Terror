@@ -1,0 +1,54 @@
+\documentclass{amsart}
+\usepackage{amsmath,amsthm,amssymb}
+%include these lines if you want to use the LaTeX "theorem" environments
+\newtheorem{theorem}{Theorem}[section]
+\newtheorem{definition}[theorem]{Definition}
+\newtheorem{lemma}[theorem]{Lemma}
+\newtheorem{corollary}[theorem]{Corollary}
+\newtheorem{example}[theorem]{Example}
+%include lines like this if you want to define your own commands 
+%to save typing
+\newcommand{\PROOF}{\noindent {\bf Proof}: }
+\newcommand{\REF}[1]{[\ref{#1}]}
+\newcommand{\Ref}[1]{(\ref{#1})}
+\newcommand{\dt}{\mbox{\rm   dt}}
+\newcommand{\C}{\mathbb{C}}
+\newcommand{\full}{\{1, \ldots, n\}}
+\newcommand{\phat}{\hat{p}}
+\begin{document}
+
+\section{Hodge results}\label{S:Hodge}
+
+Our goal is to derive an expression for the generating function of the Hodge pieces, that is to prove Theorem 
+~\ref{T:Hodge}. We do this by following section 2 of Hanlon \cite{Hanlon}. The idea is to use the following identity
+(See proof of Theorem 2.1 in Hanlon \cite{Hanlon}):
+\begin{equation} 
+  \sum_{j \ge 1} \sum_{p \ge 0} \sum_{\tau \in S_p} [e_p^{(j)}]_\tau Z(\tau) \lambda^j = \prod_l (1 + (-1)^l a_l)^
+  {-\frac{1}{l} \sum_{d |l} \mu(d) \lambda^{\frac{l}{d}}}.
+\end{equation}
+
+
+
+\begin{thebibliography}{9}
+\bibitem{GS}
+  M. Gerstenhaber and S.D. Schack,
+  \emph{A Hodge-type decomposition for commutative algebra cohomology,}
+  J. Pure Appl. Algebra {\bf 48} (1987), 229-247.
+\bibitem{HanlonMac}
+  P. Hanlon,
+  \emph{Cyclic homology and the Macdonald conjectures,}
+  Invent. Math. {\bf 86} (1986), 131-159.
+\bibitem{Hanlon}
+  P. Hanlon,
+  \emph{Hodge Structure on Posets}
+\bibitem{Loday}
+  J. L. Loday,
+  \emph{Partition eul\'eriene et op\'erations en homologie cyclique.}
+  C. R. Acad. Sci. Paris S\'er. I Math. {\bf 307} (1988), 283-286.
+\bibitem{Weibel}
+  C. Weibel,
+  \emph{An introduction to homological algebra,}
+  Cambridge University Press, UK, 1994.
+
+\end{thebibliography}
+\end{document}

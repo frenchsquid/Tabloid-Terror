@@ -1,0 +1,148 @@
+\documentclass{amsart}
+\usepackage{amsmath,amsthm,amssymb}
+%include these lines if you want to use the LaTeX "theorem" environments
+\newtheorem{theorem}{Theorem}
+\newtheorem{definition}[theorem]{Definition}
+\newtheorem{lemma}[theorem]{Lemma}
+\newtheorem{corollary}[theorem]{Corollary}
+\newtheorem{example}[theorem]{Example}
+\newtheorem{proposition}[theorem]{Proposition}
+%include lines like this if you want to define your own commands 
+%to save typing
+\newcommand{\PROOF}{\noindent {\bf Proof}: }
+\newcommand{\REF}[1]{[\ref{#1}]}
+\newcommand{\Ref}[1]{(\ref{#1})}
+\newcommand{\dt}{\mbox{\rm   dt}}
+\newcommand{\C}{\mathbb{C}}
+\newcommand{\full}{\{1, \ldots, n\}}
+\newcommand{\phat}{\hat{p}}
+\begin{document}
+
+%\title{}
+
+%\author{Scott Kravitz}
+%\address{Department of Mathematics, University of Michigan, Ann Arbor, MI 48109-1003} 
+%\subjclass{Primary 05E25}
+\date{\today}     
+%\begin{abstract}
+%\end{abstract}
+%\maketitle
+
+\begin{proposition}[Upper-triangularity] \label{P:uppertri} Fix $n$ and $k$, and set $x=n-k$. 
+  Except for the sign representation, which occurs with multiplicity 1 in
+  dimension $n-2$, the homology of $B(n, k)$ vanishes above dimension $x-1$. 
+\end{proposition}
+
+\begin{theorem} Fix $n$ and $k > 1$ and set $x=n-k$. Unless $\lambda$ is of the form $(k+1, 2^y, 1^{x-1-2y})$ or 
+$(k+2, 2^y, 1^{x-2-2y})$ the homology in dimension $x-1$ is zero. Further we have
+  \begin{enumerate}
+    \item dim($H_{x-1}( \Delta_k(k+1, 2^y, 1^{x-1-2y}) )) = x-2y$
+    \item dim($H_{x-1}( \Delta_k(k+2, 2^y, 1^{x-2-2y}) )) = x-2y-1.$
+  \end{enumerate}
+\end{theorem}
+
+\begin{proof}
+  We begin by using a spectral sequence. If $t$ is a semi-standard Young tableau then let $F(t)$ denote the number of 
+  maximal elements in $t$. Notice then that since the boundary operator always combines numbers, that after applying
+  the boundary operator we always have the same or more maximal elements (though the actual maximal element may change).
+  Hence we get:  $$F(\partial(t)) \ge F(t).$$  Thus $F$ gives a filtration on $\Delta_k(\lambda)$ for any lambda and we
+  can consider the associated spectral sequence. 
+
+  The next step is to compute the $E^1$ term of the spectral sequence, that is to compute the homology of the complex
+  $(\Delta(\lambda), \partial_0)$ where $\partial_0$ is the part of the boundary operator that does not change the 
+  filtration index. Since the filtration index only measures the number of maximal elements of $t$, $\partial_0$ can adjoin
+  any two numbers execpt for the maximal and maximal minus 1. Thus the blocks of $t$ containing maximal elements are never
+  changed in any way by $\partial_0$. Further if we removed these blocks we would still get a semi-standard Young tableau
+  since we can always choose a maximal element that lies in an outside corner, and then do the same for the tableau we 
+  have left. What we have removed when we do this is a horizontal strip. Then $\partial_0$ acts the same as $\partial$ on 
+  what we have left. Hence we get:
+  \begin{equation}\label{E:E1term}
+    E^1(\Delta_k(\lambda)) \cong \bigoplus H_{x-2}(\Delta_k(\mu)).
+  \end{equation}
+  Where we sum over all $\mu \subset \lambda$ such that $\lambda - \mu$ is a horizontal strip with size less than $k$.
+
+  Now we apply Proposition~\ref{P:uppertri} to the right hand side of Equation~\ref{E:E1term}. Letting $s=|\lambda - \mu|$
+  we wish to know if 
+  $$ x-2=n-k-2 >|\mu| -k -1=n-s-k-1.$$ We get that the solution is $$s > 1.$$ Unless, of course, we remove a horizontal 
+  strip and get $1^n$, but then we started with a hook shape.
+
+  Hence if we remove more than one block, the
+  homology vanishes so we need only sum over $|\lambda - \mu| = 1$ in Equation~\ref{E:E1term} (except for the hook  
+  shape case). 
+
+  Now we set up the induction argument. We will induct on $n$, so assume the theorem is true for all $n < N$ 
+  (letting $X=N-k$). Then for most
+  shapes removing an outside corner in Equation~\ref{E:E1term} will result in a shape of size $N-1$ which is not on the
+  list in the theorem. Thus the right-hand side is zero and we are done. Since we can only remove $k$ boxes, they only
+  hook to get to the sign representation is a shape where the top row is of size $k+1$ or less. 
+  The only shapes that we have to worry about then
+  are: 
+  \begin{enumerate}
+    \item Any hook shape of size $N$ where the first row is not of size less than $k+1$.
+    \item $(k+3, 2^y, 1^{X-3-2y})$
+    \item $(k+1, 3, 2^y, 1^{X-4-2y})$
+    \item $(k+2, 3, 2^y, 1^{X-5-2y})$
+  \end{enumerate}
+
+  So first we eliminate the hook case: $(a, 1^{N-a})$. 
+  We start with a shape where the first row is less than $k+1$ or
+  the first row is more than $k+2$. In the first case the partitions on the right hand side of Equation~\ref{E:E1term} 
+   become: $1^{N-a}$ and $1^{N-a-1}$. We got to these shapes
+  by removing $a$ [resp. $a+1$] $m$'s. There is only one generator of the sign homology and this is in the top dimension.
+  Thus $H_{X-2}(1^y)$ is nonzero only when $X=y$. That will occur only if $X-2 = N-a$ or $X-2 = N-a-1$, that is only if 
+  $a= k+1$ or $a=k+2$. To summarize for latter use we have:
+  \begin{equation} \label{E:smallhook}
+    H_y(a, 1^{n-a}) \cong 0 \mbox{ if $a < k+1$ and $y \ne n-2$}
+  \end{equation}
+
+  Now we can move on to the next cases. In all of these cases when we apply Equation~\ref{E:E1term} there is one 
+  important commonality: there is a single term on the right hand side of the equation. This means that in succesive terms
+  of the spectral sequence elements of the kernel of a $\partial_i$ can result from cancellation. That is because every 
+  tableau has a single maximal element in the same place. Thus since $\partial_i$ will only combine that maximal element
+  with elements that are one less, the effect of taking $\partial_i$ is the same as placing an maximal-1 element there 
+  instead. So if no cancellation occured before, it won't occur now.
+
+  So any cycles that survive must be caused either by (1) violated column strictness or (2) exceeding $k$. To argue against
+  these we need to keep careful track of where the maximal elements are, so the following lemma is useful:
+
+  \begin{lemma}\label{L:toprow}
+    Fix $n$ and $k > 1$, set $x=n-k$. Suppose $t$ is a homology generator with maximal element $m$ in either 
+    $H_{x-1}(\Delta_k(k+1, 1^{n-k-1}))$ or $H_{x-1}(\Delta_k(k+2, 1^{n-k-2}))$. Then the top row of $t$ begins with a $1$ 
+    and then $k$ of some number followed by another number in the $k+2$ case. 
+  \end{lemma}
+  \begin{proof}
+    We proceed by induction on $n$. So assume the lemma is true for $n, k < N$. The base case is easily verified by hand.
+    Now consider Equation~\ref{E:E1term}. We first take the partition $(k+1, 1^{n-k-1})$. The equation becomes: 
+    \begin{equation}\label{E:E1term-hookcase-1}
+      H_{x-2}(\Delta_k(1^{n-k})) \oplus 
+      H_{x-2}(\Delta_k(k, 1^{n-k-1})) \oplus H_{x-2}(\Delta_k(k+1, 1^{n-k-2})).
+    \end{equation}
+
+    Since we obtained this equation by removing all the $m$'s from the tableau, we see that in the case of the  sign 
+    representation we are done, because there $k$ $m$'s appear in the first row (note that we don't have $1^{n-k-1}$ since
+    in the that  sign case we've 
+    taken away $k+1$ $m$'s, which can't happen, so that term is zero). In the third term of the equation the induction 
+    hypothesis applies. That just leaves the $(k, 1^{n-k-1})$ term. However by 
+    Equation~\ref{E:smallhook} the homology of this is zero since $x-2 = n-k -2 < n-3 = $ the size of $(k, 1^{n-k-1})$
+    ($k>1$ by hypothesis).
+
+    Next we examine the $(k+2, 1^{n-k-2})$ case. Here the equation becomes: 
+    \begin{equation}\label{E:E1term-hookcase-2} 
+      H_{x-2}(\Delta_k(k+1, 1^{n-k-2})) \oplus H_{x-2}(\Delta_k(k+2, 1^{n-k-3})).
+    \end{equation}
+     
+    In both these cases the induction hypothesis applies, so we are done.
+  \end{proof} 
+
+  First we will deal with the possibility that we violate column strictness. This can only happen with case 3 and 4. Here
+  there is, after applying the appropriate $\partial_i$,  a $m-1$ in the third box of the second row and in the third box 
+  of the first row there also a $m-1$. Thus by Lemma~\ref{L:toprow} there is a $m-1$ in the second box of the first row, 
+  hence since the second box of the first row was not a $m$ and thus not changed by $\partial_i$, there is nothing that can
+  go there without violating column strictness of the second column. So this case cannot happen.
+
+  That just leaves us with the case of exceeding $k$. In cases 2 and 4 this cannot happen because by Lemma~ref{L:toprow} 
+  the only repeated number is not the maximal in the $k+2$ case. In case 3 we can have the maximal number be repeated,
+  but then this will reduce to the case of violating column strictness, which was already covered.
+\end{proof}
+
+\end{document}

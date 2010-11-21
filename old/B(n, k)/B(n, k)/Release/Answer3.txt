@@ -1,0 +1,12 @@
+
+The multiplicity of (1, 1, 1) in H0 is: 0
+
+The multiplicity of (1, 1, 1) in H1 is: 1
+
+The multiplicity of (2, 1) in H0 is: 0
+
+The multiplicity of (2, 1) in H1 is: 2
+
+The multiplicity of (3) in H0 is: 0
+
+The multiplicity of (3) in H1 is: 1

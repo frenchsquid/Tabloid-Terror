@@ -1,0 +1,86 @@
+<html>
+<body>
+<pre>
+<h1>Build Log</h1>
+<h3>
+--------------------Configuration: RankSet Test - Win32 Debug--------------------
+</h3>
+<h3>Command Lines</h3>
+Creating temporary file "c:\windows\TEMP\RSPE074.TMP" with contents
+[
+/nologo /MLd /W3 /Gm /GX /ZI /Od /D "WIN32" /D "_DEBUG" /D "_CONSOLE" /D "_MBCS" /Fp"Debug/RankSet Test.pch" /YX /Fo"Debug/" /Fd"Debug/" /FD /GZ /c 
+"C:\My Documents\Research\PosetHomology\Poset Homology\RankSet.cpp"
+]
+Creating command line "cl.exe @c:\windows\TEMP\RSPE074.TMP" 
+Creating temporary file "c:\windows\TEMP\RSPE075.TMP" with contents
+[
+kernel32.lib user32.lib gdi32.lib winspool.lib comdlg32.lib advapi32.lib shell32.lib ole32.lib oleaut32.lib uuid.lib odbc32.lib odbccp32.lib kernel32.lib user32.lib gdi32.lib winspool.lib comdlg32.lib advapi32.lib shell32.lib ole32.lib oleaut32.lib uuid.lib odbc32.lib odbccp32.lib /nologo /subsystem:console /incremental:yes /pdb:"Debug/RankSet Test.pdb" /debug /machine:I386 /out:"Debug/RankSet Test.exe" /pdbtype:sept 
+".\Debug\RankSetTest.obj"
+".\Debug\RankSet.obj"
+]
+Creating command line "link.exe @c:\windows\TEMP\RSPE075.TMP"
+<h3>Output Window</h3>
+Compiling...
+RankSet.cpp
+C:\My Documents\Research\PosetHomology\Poset Homology\RankSet.cpp(63) : error C2679: binary '=' : no operator defined which takes a right-hand operand of type 'class std::_Tree<int,int,struct std::set<int,struct std::less<int>,class std::allocator<int> >::_Kfn,struct std::less<int>,class std::allocator<int> >::const_iterator' (or there is no acceptable conversion)
+C:\My Documents\Research\PosetHomology\Poset Homology\RankSet.cpp(66) : error C2677: binary '-' : no global operator defined which takes type 'class std::_Tree<int,int,struct std::set<int,struct std::less<int>,class std::allocator<int> >::_Kfn,struct std::less<int>,class std::allocator<int> >::iterator' (or there is no acceptable conversion)
+C:\My Documents\Research\PosetHomology\Poset Homology\RankSet.cpp(69) : error C2679: binary '=' : no operator defined which takes a right-hand operand of type 'class std::_Tree<int,int,struct std::set<int,struct std::less<int>,class std::allocator<int> >::_Kfn,struct std::less<int>,class std::allocator<int> >::const_iterator' (or there is no acceptable conversion)
+C:\My Documents\Research\PosetHomology\Poset Homology\RankSet.cpp(80) : error C2440: 'initializing' : cannot convert from 'const class std::set<int,struct std::less<int>,class std::allocator<int> >' to 'class RankSet'
+        No constructor could take the source type, or constructor overload resolution was ambiguous
+C:\My Documents\Research\PosetHomology\Poset Homology\RankSet.cpp(96) : error C2673: 'Shape' : global functions do not have 'this' pointers
+C:\My Documents\Research\PosetHomology\Poset Homology\RankSet.cpp(96) : error C2228: left of '.begin' must have class/struct/union type
+C:\My Documents\Research\PosetHomology\Poset Homology\RankSet.cpp(97) : error C2673: 'Shape' : global functions do not have 'this' pointers
+C:\My Documents\Research\PosetHomology\Poset Homology\RankSet.cpp(97) : error C2228: left of '.begin' must have class/struct/union type
+C:\My Documents\Research\PosetHomology\Poset Homology\RankSet.cpp(97) : error C2673: 'Shape' : global functions do not have 'this' pointers
+C:\My Documents\Research\PosetHomology\Poset Homology\RankSet.cpp(97) : error C2228: left of '.end' must have class/struct/union type
+C:\My Documents\Research\PosetHomology\Poset Homology\RankSet.cpp(98) : error C2673: 'Shape' : global functions do not have 'this' pointers
+C:\My Documents\Research\PosetHomology\Poset Homology\RankSet.cpp(98) : error C2228: left of '.begin' must have class/struct/union type
+C:\My Documents\Research\PosetHomology\Poset Homology\RankSet.cpp(113) : error C2065: 'u' : undeclared identifier
+C:\My Documents\Research\PosetHomology\Poset Homology\RankSet.cpp(113) : error C2228: left of '.Shape' must have class/struct/union type
+C:\My Documents\Research\PosetHomology\Poset Homology\RankSet.cpp(116) : error C2065: 'standard' : undeclared identifier
+C:\My Documents\Research\PosetHomology\Poset Homology\RankSet.cpp(116) : error C2440: 'initializing' : cannot convert from 'int' to 'class tabloid'
+        No constructor could take the source type, or constructor overload resolution was ambiguous
+C:\My Documents\Research\PosetHomology\Poset Homology\RankSet.cpp(127) : error C2784: 'bool __cdecl std::operator ==(const class std::list<_Ty,_A> &,const class std::list<_Ty,_A> &)' : could not deduce template argument for 'const class std::list<_Ty,_A> &' from 'const class tabloid'
+C:\My Documents\Research\PosetHomology\Poset Homology\RankSet.cpp(127) : error C2784: 'bool __cdecl std::operator ==(const class std::vector<_Ty,_A> &,const class std::vector<_Ty,_A> &)' : could not deduce template argument for 'const class std::vector<_Ty,_A> &' from 'const class tabloid'
+C:\My Documents\Research\PosetHomology\Poset Homology\RankSet.cpp(127) : error C2784: 'bool __cdecl std::operator ==(const class std::multiset<_K,_Pr,_A> &,const class std::multiset<_K,_Pr,_A> &)' : could not deduce template argument for 'const class std::multiset<_K,_Pr,_A> &' from 'const class tabloid'
+C:\My Documents\Research\PosetHomology\Poset Homology\RankSet.cpp(127) : error C2784: 'bool __cdecl std::operator ==(const class std::set<_K,_Pr,_A> &,const class std::set<_K,_Pr,_A> &)' : could not deduce template argument for 'const class std::set<_K,_Pr,_A> &' from 'const class tabloid'
+C:\My Documents\Research\PosetHomology\Poset Homology\RankSet.cpp(127) : error C2784: 'bool __cdecl std::operator ==(const class std::_Tree<_K,_Ty,_Kfn,_Pr,_A> &,const class std::_Tree<_K,_Ty,_Kfn,_Pr,_A> &)' : could not deduce template argument for 'const class std::_Tree<_K,_Ty,_Kfn,_Pr,_A> &' from 'const class tabloid'
+C:\My Documents\Research\PosetHomology\Poset Homology\RankSet.cpp(127) : error C2784: 'bool __cdecl std::operator ==(const class std::allocator<_Ty> &,const class std::allocator<_U> &)' : could not deduce template argument for 'const class std::allocator<_Ty> &' from 'const class tabloid'
+C:\My Documents\Research\PosetHomology\Poset Homology\RankSet.cpp(127) : error C2784: 'bool __cdecl std::operator ==(const class std::istream_iterator<_U,_E,_Tr> &,const class std::istream_iterator<_U,_E,_Tr> &)' : could not deduce template argument for 'const class std::istream_iterator<_U,_E,_Tr> &' from 'const class tabloid'
+C:\My Documents\Research\PosetHomology\Poset Homology\RankSet.cpp(127) : error C2784: 'bool __cdecl std::operator ==(const class std::reverse_bidirectional_iterator<_BI,_Ty,_Rt,_Pt,_D> &,const class std::reverse_bidirectional_iterator<_BI,_Ty,_Rt,_Pt,_D> &)' : could not deduce template argument for 'const class std::reverse_bidirectional_iterator<_BI,_Ty,_Rt,_Pt,_D> &' from 'const class tabloid'
+C:\My Documents\Research\PosetHomology\Poset Homology\RankSet.cpp(127) : error C2784: 'bool __cdecl std::operator ==(const class std::istreambuf_iterator<_E,_Tr> &,const class std::istreambuf_iterator<_E,_Tr> &)' : could not deduce template argument for 'const class std::istreambuf_iterator<_E,_Tr> &' from 'const class tabloid'
+C:\My Documents\Research\PosetHomology\Poset Homology\RankSet.cpp(127) : error C2784: 'bool __cdecl std::operator ==(const class std::reverse_iterator<_RI,_Ty,_Rt,_Pt,_D> &,const class std::reverse_iterator<_RI,_Ty,_Rt,_Pt,_D> &)' : could not deduce template argument for 'const class std::reverse_iterator<_RI,_Ty,_Rt,_Pt,_D> &' from 'const class tabloid'
+C:\My Documents\Research\PosetHomology\Poset Homology\RankSet.cpp(127) : error C2784: 'bool __cdecl std::operator ==(const struct std::pair<_T1,_T2> &,const struct std::pair<_T1,_T2> &)' : could not deduce template argument for 'const struct std::pair<_T1,_T2> &' from 'const class tabloid'
+C:\My Documents\Research\PosetHomology\Poset Homology\RankSet.cpp(127) : error C2676: binary '==' : 'const class tabloid' does not define this operator or a conversion to a type acceptable to the predefined operator
+C:\My Documents\Research\PosetHomology\Poset Homology\RankSet.cpp(144) : error C2673: 'difset' : global functions do not have 'this' pointers
+C:\My Documents\Research\PosetHomology\Poset Homology\RankSet.cpp(144) : error C2228: left of '.begin' must have class/struct/union type
+C:\My Documents\Research\PosetHomology\Poset Homology\RankSet.cpp(145) : error C2673: 'difset' : global functions do not have 'this' pointers
+C:\My Documents\Research\PosetHomology\Poset Homology\RankSet.cpp(145) : error C2228: left of '.begin' must have class/struct/union type
+C:\My Documents\Research\PosetHomology\Poset Homology\RankSet.cpp(145) : error C2673: 'difset' : global functions do not have 'this' pointers
+C:\My Documents\Research\PosetHomology\Poset Homology\RankSet.cpp(145) : error C2228: left of '.end' must have class/struct/union type
+C:\My Documents\Research\PosetHomology\Poset Homology\RankSet.cpp(146) : error C2673: 'difset' : global functions do not have 'this' pointers
+C:\My Documents\Research\PosetHomology\Poset Homology\RankSet.cpp(146) : error C2228: left of '.begin' must have class/struct/union type
+C:\My Documents\Research\PosetHomology\Poset Homology\RankSet.cpp(157) : error C2143: syntax error : missing ';' before 'this'
+C:\My Documents\Research\PosetHomology\Poset Homology\RankSet.cpp(157) : error C2673: 'ReShape' : global functions do not have 'this' pointers
+C:\My Documents\Research\PosetHomology\Poset Homology\RankSet.cpp(157) : error C2228: left of '.difset' must have class/struct/union type
+C:\My Documents\Research\PosetHomology\Poset Homology\RankSet.cpp(161) : error C2065: 'sort' : undeclared identifier
+C:\My Documents\Research\PosetHomology\Poset Homology\RankSet.cpp(161) : error C2039: 'last' : is not a member of 'list<int,class std::allocator<int> >'
+C:\My Documents\Research\PosetHomology\Poset Homology\RankSet.cpp(168) : error C2255: 'ConvertFromTabloid' : a friend function can only be declared in a class
+C:\My Documents\Research\PosetHomology\Poset Homology\RankSet.cpp(168) : error C2556: 'void __cdecl ConvertFromTabloid(const class tabloid,const class RankSet)' : overloaded function differs only by return type from 'class chain __cdecl ConvertFromTabloid(const class tabloid,const class RankSet)'
+        c:\my documents\research\posethomology\poset homology\rankset.h(26) : see declaration of 'ConvertFromTabloid'
+C:\My Documents\Research\PosetHomology\Poset Homology\RankSet.cpp(171) : error C2662: 'ReShape' : cannot convert 'this' pointer from 'const class RankSet' to 'class RankSet &'
+        Conversion loses qualifiers
+C:\My Documents\Research\PosetHomology\Poset Homology\RankSet.cpp(181) : error C2371: 'Answer' : redefinition; different basic types
+        C:\My Documents\Research\PosetHomology\Poset Homology\RankSet.cpp(169) : see declaration of 'Answer'
+C:\My Documents\Research\PosetHomology\Poset Homology\RankSet.cpp(184) : error C2664: 'struct std::pair<class std::_Tree<int,int,struct std::set<int,struct std::less<int>,class std::allocator<int> >::_Kfn,struct std::less<int>,class std::allocator<int> >::iterator,bool> __thiscall std::set<int,struct std::less<int>,class std::allocator<int> >::insert(const int &)' : cannot convert parameter 1 from 'class std::set<int,struct std::less<int>,class std::allocator<int> >' to 'const int &'
+        Reason: cannot convert from 'class std::set<int,struct std::less<int>,class std::allocator<int> >' to 'const int'
+        No user-defined-conversion operator available that can perform this conversion, or the operator cannot be called
+Error executing cl.exe.
+
+
+
+<h3>Results</h3>
+RankSet Test.exe - 46 error(s), 0 warning(s)
+</pre>
+</body>
+</html>

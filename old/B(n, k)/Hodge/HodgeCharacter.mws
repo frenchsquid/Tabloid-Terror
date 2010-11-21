@@ -1,0 +1,109 @@
+{VERSION 3 0 "IBM INTEL NT" "3.0" }
+{USTYLETAB {CSTYLE "Maple Input" -1 0 "Courier" 0 1 255 0 0 1 0 1 0 0 
+1 0 0 0 0 }{CSTYLE "2D Math" -1 2 "Times" 0 1 0 0 0 0 0 0 2 0 0 0 0 0 
+0 }{CSTYLE "2D Output" 2 20 "" 0 1 0 0 255 1 0 0 0 0 0 0 0 0 0 }
+{PSTYLE "Normal" -1 0 1 {CSTYLE "" -1 -1 "Times" 1 12 0 0 0 1 2 2 2 2 
+2 2 1 1 1 }1 1 0 0 0 0 1 0 1 0 2 2 0 1 }{PSTYLE "Warning" -1 7 1 
+{CSTYLE "" -1 -1 "Courier" 1 10 0 0 255 1 2 2 2 2 2 1 1 1 3 }1 1 0 0 
+0 0 1 0 1 0 2 2 0 1 }{PSTYLE "Error" 7 8 1 {CSTYLE "" -1 -1 "" 0 1 
+255 0 255 1 0 0 0 0 0 0 0 0 0 }0 0 0 -1 -1 -1 0 0 0 0 0 0 -1 0 }
+{PSTYLE "Maple Output" -1 11 1 {CSTYLE "" -1 -1 "Times" 1 12 0 0 0 1 
+2 2 2 2 2 2 1 1 1 }3 3 0 0 0 0 1 0 1 0 2 2 0 1 }{PSTYLE "Maple Output
+" -1 12 1 {CSTYLE "" -1 -1 "Times" 1 12 0 0 0 1 2 2 2 2 2 2 1 1 1 }1 
+3 0 0 0 0 1 0 1 0 2 2 0 1 }}
+{SECT 0 {EXCHG {PARA 0 "> " 0 "" {MPLTEXT 1 0 239 "with(numtheory):\nE
+xponent := proc(l)\n    local LoopSet, Answer, d;\n    Answer := 0;\n \+
+   LoopSet := divisors(l):\n    for d in LoopSet do \n        Answer :
+= Answer + mobius(d)*lambda^(l/d):\n    od:\n    Answer := Answer/(-l)
+:\n    Answer;\nend:" }}{PARA 7 "" 1 "" {TEXT -1 33 "Warning, new defi
+nition for order" }}}{EXCHG {PARA 0 "> " 0 "" {MPLTEXT 1 0 577 "with(c
+ombinat):\nZ := proc(n)\n    local x, Answer, Total, A, i, lambda, par
+tset:\n    A := array(1..n):\n    partset := partition(n):\n    Total \+
+:= 0;\n    for lambda in partset do\n        for i from 1 to n do\n   \+
+         A[i] := 0:\n        od:\n        for x in lambda do \n       \+
+     A[x] := A[x] +1:\n        od:\n        Answer := 1:\n        for \+
+i from 1 to n do\n            Answer := Answer/(A[i]!*i^A[i]):\n      \+
+  od:\n        for i from 1 to n do \n            Answer := Answer * (
+a[i])^A[i]:\n        od:  \n        Total := Total + Answer:     \n   \+
+ od:\n    Total;     \nend:  \n    " }}{PARA 7 "" 1 "" {TEXT -1 31 "Wa
+rning, new definition for Chi" }}}{EXCHG {PARA 0 "> " 0 "" {MPLTEXT 1 
+0 826 "SubList := proc(n, k)\n    local Answer, i:\n    Answer := \{\}
+:\n    for i from 1 to n do \n        Answer := Answer union \{a[i]=a[
+i*k]\};\n    od:\n    Answer;\nend:\nWeight := proc(Term)\n    local A
+nswer, i, Vary;\n    Answer := 0:\n    for i from 1 to nops(Term) do\n
+        Vary := op(i, Term):\n        if (type(Vary, name)) then\n    \+
+         Answer := Answer + op(Vary):\n        elif (not(type(Vary, nu
+meric))) then\n             Answer := Answer + op([1,1], Vary)*op([2, \+
+1], Vary):\n        elif (nops(Term) = 1 and nops(Vary)=1) then\n     \+
+        Answer := op(1, Vary):\n        fi:     \n    od:\n    Answer;
+  \nend:\nTruncate := proc(n, Poly)\n   local Answer, i:\n   Answer :=
+ 0;\n   for i from 1 to  nops(Poly) do\n       if (Weight(op(i, Poly))
+ <= n) then\n          Answer := Answer + op(i, Poly):\n       fi:\n  \+
+ od:\n   Answer;\nend: \n     " }}}{EXCHG {PARA 0 "> " 0 "" {MPLTEXT 
+1 0 283 "Plethy := proc(n, k, multiplier) \n    local Answer1, Answer2
+, i, expression;\n    expression := 0:\n    for i from 1 to k do\n    \+
+    expression := expression + Z(i):\n    od:\n    Answer1 := subs(Sub
+List(n, multiplier), expression):\n    Answer2 := Truncate(n, Answer1)
+:\n    Answer2;\nend:" }}}{PARA 11 "" 1 "" {TEXT -1 0 "" }}{EXCHG 
+{PARA 0 "> " 0 "" {MPLTEXT 1 0 156 "Binomial := proc(poly, n)\n    loc
+al i, Answer;\n    Answer := 1/(n!):\n    for i from 1 to n do \n     \+
+   Answer := Answer*(poly-i+1):\n    od:\n    Answer;\nend:" }}}
+{EXCHG {PARA 0 "> " 0 "" {MPLTEXT 1 0 338 "BigKahuna := proc(n, k)\n  \+
+  local Term2, Term, l, m, Answer, Total:\n    Answer := -1:\n    for \+
+l from 1 to n do\n        Term := Plethy(n, k, l):\n        Total := 0
+: \n        for m from 0 to floor(n/l) do \n            Total := Total
+ + Binomial(Exponent(l), m)*Term^m\n        od:\n        Answer := Ans
+wer * Total: \n    od:\n    Answer:  \nend:" }}}{EXCHG {PARA 0 "> " 0 
+"" {MPLTEXT 1 0 218 "Big := proc(n, k)\n  local s, i, Answer, c:\n  s:
+=collect(expand(BigKahuna(n,k)), lambda):\n  Answer:=0:\n  for i from \+
+1 to 3 do\n    c:= coeff(s, lambda, i):\n    Answer:=Answer+Truncate(n
+, c)*lambda^i:\n  od:\n  Answer;\nend:" }}}{EXCHG {PARA 0 "> " 0 "" 
+{MPLTEXT 1 0 9 "Big(3,2);" }}{PARA 11 "" 1 "" {XPPMATH 20 "6#,(*&,*&%
+\"aG6#\"\"$#\"\"\"F)&F'6#F+!\"\"*$)F,F)\"\"\"#F+\"\"'*&F,F+&F'6#\"\"#F
++#F+F7F+%'lambdaGF+F+*&,&*$)F,F7F1F8F5#F.F7F+)F9F7F1F+*&,(F&#F.F)F4F8F
+/#F.F3F+)F9F)F1F+" }}}{EXCHG {PARA 12 "" 1 "" {TEXT -1 0 "" }}}{EXCHG 
+{PARA 0 "> " 0 "" {MPLTEXT 1 0 839 "Shape := proc(Term)\n    local Ans
+wer, i,j, Vary, temp;\n    Answer := []:\n    for i from 1 to nops(Ter
+m) do\n        Vary := op(i, Term):\n        if (type(Vary, name)) the
+n\n             Answer := [op(Answer), op(Vary)]:\n        elif (not(t
+ype(Vary, numeric))) then\n             temp:=[]:\n             for j \+
+from 1 to op([2,1], Vary) do  \n               temp:=[op(temp), op([1,
+1], Vary)]:\n             od:              \n             Answer := [o
+p(Answer) ,op(temp)]:\n        elif (nops(Term) = 1 and nops(Vary)=1) \+
+then\n             Answer := op(1, Vary):\n        fi:     \n    od:\n
+    Answer;  \nend:\n\nPhi := proc(n, k, j, part)\n  local s, Answer, \+
+i:\n  s:=coeff(Big(n, k), lambda, j):\n  Answer:=0:\n  for i from 1 to
+ nops(s) do\n    if (sort(Shape(op(i, s))) = part) then\n      Answer:
+=Answer+op(1, op(i,s));\n    fi:\n  od:\n  Answer;\nend:         " }}}
+{EXCHG {PARA 8 "" 1 "" {TEXT -1 46 "Error, (in SubList) invalid subscr
+ipt selector" }}}{EXCHG {PARA 0 "> " 0 "" {MPLTEXT 1 0 0 "" }}}{EXCHG 
+{PARA 0 "> " 0 "" {MPLTEXT 1 0 19 "Phi(3,2,1,[1,1,1]);" }}{PARA 11 "" 
+1 "" {XPPMATH 20 "6##\"\"\"\"\"'" }}}{EXCHG {PARA 0 "> " 0 "" 
+{MPLTEXT 1 0 212 "Inner := proc(n, k, j, rep)\n  local p, Answer, i:\n
+  p:=partition(n):\n  Answer:=0:\n  for i from 1 to nops(p) do\n    An
+swer := Answer + Chi(rep, op(i,p))*Phi(n,k,j,op(i,p)):\n  od:\n  Answe
+r := Answer:\n  Answer;\nend:" }}}{EXCHG {PARA 0 "" 0 "" {TEXT -1 0 "
+" }}}{EXCHG {PARA 0 "> " 0 "" {MPLTEXT 1 0 21 "Inner(3,2,3,[1,1,1]);" 
+}}{PARA 11 "" 1 "" {XPPMATH 20 "6#!\"\"" }}}{EXCHG {PARA 0 "> " 0 "" 
+{MPLTEXT 1 0 3 "-1;" }}{PARA 11 "" 1 "" {XPPMATH 20 "6#!\"\"" }}}
+{EXCHG {PARA 0 "> " 0 "" {MPLTEXT 1 0 19 "Inner(4,2,1,[1,3]);" }}
+{PARA 0 "> " 0 "" {MPLTEXT 1 0 59 "Inner(4,2,2,[1,3]);\nInner(4,2,3,[1
+,3]);\nInner(4,2,4,[1,3]);" }}{PARA 11 "" 1 "" {XPPMATH 20 "6#\"\"\"" 
+}}{PARA 11 "" 1 "" {XPPMATH 20 "6#\"\"\"" }}{PARA 11 "" 1 "" {XPPMATH 
+20 "6#\"\"!" }}{PARA 11 "" 1 "" {XPPMATH 20 "6#\"\"!" }}}{EXCHG {PARA 
+0 "> " 0 "" {MPLTEXT 1 0 19 "Inner(4,2,3,[1,3]);" }}{PARA 11 "" 1 "" 
+{XPPMATH 20 "6#\"\"!" }}}{EXCHG {PARA 0 "> " 0 "" {MPLTEXT 1 0 14 "Ple
+thy(3,2,3);" }}{PARA 11 "" 1 "" {XPPMATH 20 "6#&%\"aG6#\"\"$" }}}
+{EXCHG {PARA 0 "> " 0 "" {MPLTEXT 1 0 238 "ParList:=partition(4):\nfor
+ i from 1 to nops(ParList) do\nfor j from 1 to 4 do \nfor k from 1 to \+
+3 do\n  print(\"The multiplicity of \", op(i,ParList), \" in the \", j
+, \"Hodge piece with k=\", k, \" is\", Inner(4, k, j, op(i, ParList)))
+;\nod;\nod;\nod;" }}{PARA 11 "" 1 "" {XPPMATH 20 "6*Q5The~multiplicity
+~of~6\"7&\"\"\"F&F&F&Q)~in~the~F$F&Q4Hodge~piece~with~k=F$F&Q$~isF$\"
+\"!" }}{PARA 11 "" 1 "" {XPPMATH 20 "6*Q5The~multiplicity~of~6\"7&\"\"
+\"F&F&F&Q)~in~the~F$F&Q4Hodge~piece~with~k=F$\"\"#Q$~isF$\"\"!" }}
+{PARA 8 "" 1 "" {TEXT -1 67 "Error, (in expand/bigprod) object too lar
+ge for the Student Version" }}}{EXCHG {PARA 0 "> " 0 "" {MPLTEXT 1 0 
+8 "ParList;" }}{PARA 11 "" 1 "" {XPPMATH 20 "6#-%+partitionsG6#\"\"%" 
+}}}{EXCHG {PARA 0 "> " 0 "" {MPLTEXT 1 0 0 "" }}}}{MARK "22 0 0" 0 }
+{VIEWOPTS 1 1 0 1 1 1803 }

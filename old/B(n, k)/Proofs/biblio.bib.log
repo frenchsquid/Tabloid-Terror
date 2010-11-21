@@ -1,0 +1,25 @@
+This is TeX, Version 3.14159 (MiKTeX 2.1) (preloaded format=latex 2000.11.28)  30 JUL 2003 13:58
+**biblio.bib.tex
+(biblio.bib.tex
+LaTeX2e <2001/06/01>
+Babel <v3.7h> and hyphenation patterns for english, french, german, ngerman, du
+mylang, nohyphenation, loaded.
+
+! LaTeX Error: Lonely \item--perhaps a missing list environment.
+
+See the LaTeX manual or LaTeX Companion for explanation.
+Type  H <return>  for immediate help.
+ ...                                      
+                                          
+l.1 \bibitem{GS}
+                
+? 
+! Emergency stop.
+ ...                                      
+                                          
+l.1 \bibitem{GS}
+                
+Try typing  <return>  to proceed.
+If that doesn't work, type  X <return>  to quit.
+
+No pages of output.

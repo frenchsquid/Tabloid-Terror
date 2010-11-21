@@ -1,0 +1,64 @@
+{VERSION 4 0 "IBM INTEL NT" "4.0" }
+{USTYLETAB {CSTYLE "Maple Input" -1 0 "Courier" 0 1 255 0 0 1 0 1 0 0 
+1 0 0 0 0 1 }{CSTYLE "2D Math" -1 2 "Times" 0 1 0 0 0 0 0 0 2 0 0 0 0 
+0 0 1 }{CSTYLE "2D Output" 2 20 "" 0 1 0 0 255 1 0 0 0 0 0 0 0 0 0 1 }
+{PSTYLE "Normal" -1 0 1 {CSTYLE "" -1 -1 "Times" 1 12 0 0 0 1 2 2 2 2 
+2 2 1 1 1 1 }1 1 0 0 0 0 1 0 1 0 2 2 0 1 }{PSTYLE "Text Output" -1 2 
+1 {CSTYLE "" -1 -1 "Courier" 1 10 0 0 255 1 0 0 0 0 0 1 3 0 3 0 }1 0 
+0 -1 -1 -1 0 0 0 0 0 0 -1 0 }{PSTYLE "Warning" 2 7 1 {CSTYLE "" -1 -1 
+"" 0 1 0 0 255 1 0 0 0 0 0 0 1 0 0 0 }0 0 0 -1 -1 -1 0 0 0 0 0 0 -1 0 
+}{PSTYLE "Maple Output" -1 11 1 {CSTYLE "" -1 -1 "Times" 1 12 0 0 0 1 
+2 2 2 2 2 2 1 1 1 1 }3 3 0 0 0 0 1 0 1 0 2 2 0 1 }{PSTYLE "Maple Outpu
+t" -1 12 1 {CSTYLE "" -1 -1 "Times" 1 12 0 0 0 1 2 2 2 2 2 2 1 1 1 1 }
+1 3 0 0 0 0 1 0 1 0 2 2 0 1 }}
+{SECT 0 {EXCHG {PARA 0 "> " 0 "" {MPLTEXT 1 0 19 "s:= BigKahuna(2,2);
+" }}{PARA 11 "" 1 "" {XPPMATH 20 "6#>%\"sG*&,&\"\"\"F'*&,&*$)%'lambdaG
+\"\"#F'#!\"\"F-*&#F'F-F'F,F'F'F'&%\"aG6#F-F'F'F',(F'F'*&F,F',(&F36#F'F
+'*&F1F')F8F-F'F'*&F1F'F2F'F'F'F/*&#F'F-F'*(F,F',&F,F/F'F/F')F7F-F'F'F/
+F'" }}}{EXCHG {PARA 0 "> " 0 "" {MPLTEXT 1 0 82 "nops(op([2, nops(op(2
+,s))], s));\nnops(op([3, nops(op(3,s))], s));\nop([2,1],s);    " }}
+{PARA 11 "" 1 "" {XPPMATH 20 "6#\"\"\"" }}{PARA 11 "" 1 "" {XPPMATH 
+20 "6#\"\"#" }}{PARA 11 "" 1 "" {XPPMATH 20 "6#,&*$)&%\"aG6#\"\"\"\"\"
+#F)F)*(\"\"&F)&F'6#F*F)&F'6#\"\"$F)F)" }}}{EXCHG {PARA 0 "> " 0 "" 
+{MPLTEXT 1 0 115 "Form:=collect(s, lambda);\nn:=2;\n\nTerm := subs(lam
+bda=1, (op(2,Form)));\nTerm := expand(Term);\nTruncate(3, Term);    " 
+}}{PARA 12 "" 1 "" {XPPMATH 20 "6#>%%FormG,,*(&%\"aG6#\"\"#\"\"\"),(&F
+(6#F+F+*&#F+F*F+)F.F*F+F+*&F1F+F'F+F+F*F+)%'lambdaG\"\"%F+#!\"\"F6*&,&
+*&F'F+F,F+#F+F6*&#F+F*F+*&F'F+,*F.F8*&#F+F*F+*$F2F+F+F8*&#F+F*F+F'F+F8
+*&F1F+F,F+F+F+F+F8F+)F5\"\"$F+F+*&,(*$F,F+F1*(F1F+F'F+F@F+F+*&#F+F*F+F
+'F+F8F+)F5F*F+F+*&,(F.F8*&#F+F*F+FCF+F8*&F1F+F,F+F+F+F5F+F+F+F+" }}
+{PARA 11 "" 1 "" {XPPMATH 20 "6#>%\"nG\"\"#" }}{PARA 11 "" 1 "" 
+{XPPMATH 20 "6#>%%TermG,&*&&%\"aG6#\"\"#\"\"\"),(&F(6#F+F+*&#F+F*F+)F.
+F*F+F+*&F1F+F'F+F+F*F+#F+\"\"%*&#F+F*F+*&F'F+,*F.!\"\"*&#F+F*F+*$F2F+F
++F:*&#F+F*F+F'F+F:*&F1F+F,F+F+F+F+F:" }}{PARA 11 "" 1 "" {XPPMATH 20 "
+6#>%%TermG,(*&)&%\"aG6#\"\"\"\"\"#F+&F)6#F,F+#F+\"\"%*(#F+F,F+F-F+F(F+
+F+*&F/F+)F-F,F+F+" }}{PARA 11 "" 1 "" {XPPMATH 20 "6#,$*&&%\"aG6#\"\"#
+\"\"\"&F&6#F)F)#F)F(" }}}{EXCHG {PARA 0 "> " 0 "" {MPLTEXT 1 0 486 "n:
+=6:\nk:=4:\nForm := collect(BigKahuna(n,k), lambda):\nAnswer := 0:\nfo
+r i from 1 to nops(Form) do\n    HodgePart := op([i, nops(op(i,Form))]
+, Form):\n    if ( nops(HodgePart) = 1) then\n        Answer := Answer
+ + op(i, Form):\n    elif (op(2, HodgePart) <= n) then\n        Answer
+ := Answer + op(i, Form):\n    fi:\nod:\nfor i from 1 to nops(Answer) \+
+do\n    Term := op(i, Answer):\n    Term := subs(lambda=1, Term):\n   \+
+ Term := expand(Term):\n    Term := Truncate(n, Term):\n    Print(Term
+);\n    \nod:" }}{PARA 7 "" 1 "" {TEXT -1 33 "Warning, computation int
+errupted\n" }}}{EXCHG {PARA 0 "> " 0 "" {MPLTEXT 1 0 5 "Term;" }}
+{PARA 11 "" 1 "" {XPPMATH 20 "6#\"\"\"" }}}{EXCHG {PARA 0 "> " 0 "" 
+{MPLTEXT 1 0 50 "Term := op(1, Answer);\nsubs(lambda=1, Term);\nTerm;
+" }}{PARA 12 "" 1 "" {XPPMATH 20 "6#>%%TermG*&,,*$),(&%\"aG6#\"\"\"F-*
+&#F-\"\"#F-)F*F0F-F-*&F/F-&F+6#F0F-F-\"\"$F-#!\"\"\"\"'*&,&F3F/*&#F-F5
+F-&F+6#F5F-F-F-,&*$)F)F0F-F/*&#F-F0F-F'F-F7F-F-*&,&F3#F7F0*(#F-F8F-F3F
+-F=F-F-F-,,F*F7*&#F-F0F-*$F1F-F-F7*&#F-F0F-F3F-F7*&F/F-FAF-F-*&#F-F5F-
+F'F-F7F-F-*&#F-F8F-*&F3F-F=F-F-F7*&#F-F5F-F=F-F7F-)%'lambdaGF5F-" }}
+{PARA 12 "" 1 "" {XPPMATH 20 "6#,,*$),(&%\"aG6#\"\"\"F**&#F*\"\"#F*)F'
+F-F*F**&F,F*&F(6#F-F*F*\"\"$F*#!\"\"\"\"'*&,&F0F,*&#F*F2F*&F(6#F2F*F*F
+*,&*$)F&F-F*F,*&#F*F-F*F$F*F4F*F**&,&F0#F4F-*(#F*F5F*F0F*F:F*F*F*,,F'F
+4*&#F*F-F**$F.F*F*F4*&#F*F-F*F0F*F4*&F,F*F>F*F**&#F*F2F*F$F*F4F*F**&#F
+*F5F**&F0F*F:F*F*F4*&#F*F2F*F:F*F4" }}{PARA 12 "" 1 "" {XPPMATH 20 "6#
+*&,,*$),(&%\"aG6#\"\"\"F+*&#F+\"\"#F+)F(F.F+F+*&F-F+&F)6#F.F+F+\"\"$F+
+#!\"\"\"\"'*&,&F1F-*&#F+F3F+&F)6#F3F+F+F+,&*$)F'F.F+F-*&#F+F.F+F%F+F5F
++F+*&,&F1#F5F.*(#F+F6F+F1F+F;F+F+F+,,F(F5*&#F+F.F+*$F/F+F+F5*&#F+F.F+F
+1F+F5*&F-F+F?F+F+*&#F+F3F+F%F+F5F+F+*&#F+F6F+*&F1F+F;F+F+F5*&#F+F3F+F;
+F+F5F+)%'lambdaGF3F+" }}}{EXCHG {PARA 0 "> " 0 "" {MPLTEXT 1 0 0 "" }}
+}}{MARK "4 0 0" 0 }{VIEWOPTS 1 1 0 1 1 1803 1 1 1 1 }{PAGENUMBERS 0 1 
+2 33 1 1 }

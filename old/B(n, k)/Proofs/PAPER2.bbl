@@ -1,0 +1,33 @@
+\providecommand{\bysame}{\leavevmode\hbox to3em{\hrulefill}\thinspace}
+\providecommand{\MR}{\relax\ifhmode\unskip\space\fi MR }
+% \MRhref is called by the amsart/book/proc definition of \MR.
+\providecommand{\MRhref}[2]{%
+  \href{http://www.ams.org/mathscinet-getitem?mr=#1}{#2}
+}
+\providecommand{\href}[2]{#2}
+\begin{thebibliography}{1}
+
+\bibitem{GS}
+M.~Gerstenhaber and S.D. Schack, \emph{A hodge-type decomposition for
+  commutative algebra cohomology},  \textbf{48} (1987), 229--247.
+
+\bibitem{HanlonMac}
+P.~Hanlon, \emph{Cyclic homology and the macdonald conjectures}, Invent. Math.
+  \textbf{68} (1986), 131--159.
+
+\bibitem{Hanlon}
+\bysame, \emph{Hodge structure on posets}, Proc. AMS (to appear).
+
+\bibitem{S1}
+S.~Kravitz, \emph{The hodge structure on a filtered boolean algebra}, J.
+  Algebraic Comb. (to appear).
+
+\bibitem{Sagan}
+B.~E. Sagan, \emph{The symmetric group: Representations, combinatorial
+  algorithms, and symmetric functions}, Springer-Verlag, 2001.
+
+\bibitem{Weibel}
+C.~Weibel, \emph{An introduction to homological algebra}, Cambridge University
+  Press, 1994.
+
+\end{thebibliography}

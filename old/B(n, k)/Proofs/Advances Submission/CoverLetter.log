@@ -1,0 +1,101 @@
+This is TeX, Version 3.14159 (MiKTeX 2.1) (preloaded format=latex 2000.11.28)  10 SEP 2003 10:14
+**CoverLetter.tex
+(CoverLetter.tex
+LaTeX2e <2001/06/01>
+Babel <v3.7h> and hyphenation patterns for english, french, german, ngerman, du
+mylang, nohyphenation, loaded.
+(elsart.cls
+Document Class: elsart 2001/01/05, 2.18: Elsevier Science
+\@frontmatterwidth=\dimen102
+\@bls=\dimen103
+\eqntopsep=\skip41
+\eqnarraycolsep=\dimen104
+\labelwidthi=\dimen105
+\labelwidthii=\dimen106
+\labelwidthiii=\dimen107
+\labelwidthiv=\dimen108
+\@maxlistdepth=\count79
+\eqnbaselineskip=\skip42
+\eqnlineskip=\skip43
+\mathindent=\dimen109
+\rulepreskip=\dimen110
+\rulepostskip=\dimen111
+\c@section=\count80
+\c@subsection=\count81
+\c@subsubsection=\count82
+\c@paragraph=\count83
+\c@subparagraph=\count84
+(C:\Program Files\Tex\tex\latex\base\latexsym.sty
+Package: latexsym 1998/08/17 v2.2e Standard LaTeX package (lasy symbols)
+\symlasy=\mathgroup4
+LaTeX Font Info:    Overwriting symbol font `lasy' in version `bold'
+(Font)                  U/lasy/m/n --> U/lasy/b/n on input line 42.
+)
+\c@thm=\count85
+\c@alg=\count86
+\c@algorithm=\count87
+\c@note=\count88
+\c@summ=\count89
+\c@case=\count90
+\@tempcntc=\count91
+\c@figure=\count92
+\c@table=\count93
+\t@glob@notes=\toks14
+\t@loc@notes=\toks15
+\note@cnt=\count94
+\corauth@text=\toks16
+\email@text=\toks17
+\url@text=\toks18
+\c@corauth=\count95
+\c@author=\count96
+\n@author=\count97
+\c@collab=\count98
+\n@collab=\count99
+\c@address=\count100
+\sv@mathsurround=\dimen112
+\sv@hyphenpenalty=\count101
+\prev@elem=\count102
+\cur@elem=\count103
+\fm@box=\box26
+\fm@size=\dimen113
+\t@abstract=\box27
+\t@keyword=\box28
+\t@xtheight=\dimen114
+\@logoheight=\dimen115
+\@pubyear=\count104
+\c@firstpage=\count105
+\c@lastpage=\count106
+\slashbox=\box29
+LaTeX Font Info:    External font `cmex10' loaded for size
+(Font)              <12> on input line 1377.
+LaTeX Font Info:    External font `cmex10' loaded for size
+(Font)              <8> on input line 1377.
+LaTeX Font Info:    External font `cmex10' loaded for size
+(Font)              <6> on input line 1377.
+LaTeX Font Info:    Try loading font information for U+lasy on input line 1377.
+
+
+(C:\Program Files\Tex\tex\latex\base\ulasy.fd
+File: ulasy.fd 1998/08/17 v2.2e LaTeX symbol font definitions
+)
+\Slashbox=\box30
+LaTeX Font Info:    External font `cmex10' loaded for size
+(Font)              <14.4> on input line 1378.
+LaTeX Font Info:    External font `cmex10' loaded for size
+(Font)              <7> on input line 1378.
+) (CoverLetter.aux)
+LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 2.
+LaTeX Font Info:    ... okay on input line 2.
+LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 2.
+LaTeX Font Info:    ... okay on input line 2.
+LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 2.
+LaTeX Font Info:    ... okay on input line 2.
+LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 2.
+LaTeX Font Info:    ... okay on input line 2.
+LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 2.
+LaTeX Font Info:    ... okay on input line 2.
+LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 2.
+LaTeX Font Info:    ... okay on input line 2.
+ [1]
+(CoverLetter.aux) )
+Output written on CoverLetter.dvi (1 page, 836 bytes).

@@ -1,0 +1,114 @@
+> with(numtheory):
+> Exponent := proc(l)
+>     local LoopSet, Answer, d;
+>     Answer := 0;
+>     LoopSet := divisors(l):
+>     for d in LoopSet do 
+>         Answer := Answer + mobius(d)*lambda^(l/d):
+>     od:
+>     Answer := Answer/(-l):
+>     Answer;
+> end:
+Warning, the protected name order has been redefined and unprotected
+
+> with(combinat):
+> Z := proc(n)
+>     local x, Answer, Total, A, i, lambda, partset:
+>     A := array(1..n):
+>     partset := partition(n):
+>     Total := 0;
+>     for lambda in partset do
+>         for i from 1 to n do
+>             A[i] := 0:
+>         od:
+>         for x in lambda do 
+>             A[x] := A[x] +1:
+>         od:
+>         Answer := 1:
+>         for i from 1 to n do
+>             Answer := Answer/(A[i]!*i^A[i]):
+>         od:
+>         for i from 1 to n do 
+>             Answer := Answer * (a[i])^A[i]:
+>         od:  
+>         Total := Total + Answer:     
+>     od:
+>     Total;     
+> end:  
+>     
+Warning, the protected name Chi has been redefined and unprotected
+
+> SubList := proc(n, k)
+>     local Answer, i:
+>     Answer := {}:
+>     for i from 1 to n do 
+>         Answer := Answer union {a[i]=a[i*k]};
+>     od:
+>     Answer;
+> end:
+> Weight := proc(Term)
+>     local Answer, i, Vary;
+>     Answer := 0:
+>     for i from 1 to nops(Term) do
+>         Vary := op(i, Term):
+>         if (type(Vary, name)) then
+>              Answer := Answer + op(Vary):
+>         elif (not(type(Vary, numeric))) then
+>              Answer := Answer + op([1,1], Vary)*op([2, 1], Vary):
+>         elif (nops(Term) = 1 and nops(Vary)=1) then
+>              Answer := op(1, Vary):
+>         fi:     
+>     od:
+>     Answer;  
+> end:
+> Truncate := proc(n, Poly)
+>    local Answer, i:
+>    Answer := 0;
+>    for i from 1 to  nops(Poly) do
+>        if (Weight(op(i, Poly)) <= n) then
+>           Answer := Answer + op(i, Poly):
+>        fi:
+>    od:
+>    Answer;
+> end: 
+>      
+> Plethy := proc(n, k, multiplier) 
+>     local Answer1, Answer2, i, expression;
+>     expression := 0:
+>     for i from 1 to k do
+>         expression := expression + Z(i):
+>     od:
+>     Answer1 := subs(SubList(n, multiplier), expression):
+>     Answer2 := Truncate(n, Answer1):
+>     Answer2;
+> end:
+
+> Binomial := proc(poly, n)
+>     local i, Answer;
+>     Answer := 1/(n!):
+>     for i from 1 to n do 
+>         Answer := Answer*(poly-i+1):
+>     od:
+>     Answer;
+> end:
+> BigKahuna := proc(n, k)
+>     local Term, l, m, Answer, Total:
+>     Answer := 1:
+>     for l from 1 to n do
+>         Term := Plethy(n, k, l):
+>         Total := 0: 
+>         for m from 0 to floor(n/l) do 
+>             Total := Total + Binomial(Exponent(l), m)*Term^m
+>         od:
+>         Answer := Answer * Total: 
+>     od:
+>     Answer:
+> end:
+> 
+
+> 
+
+> s:=collect(BigKahuna(7,2), lambda);
+> 
+
+ 

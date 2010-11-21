@@ -1,0 +1,37 @@
+<html>
+<body>
+<pre>
+<h1>Build Log</h1>
+<h3>
+--------------------Configuration: tabloid test - Win32 Debug--------------------
+</h3>
+<h3>Command Lines</h3>
+Creating temporary file "c:\windows\TEMP\RSPA055.TMP" with contents
+[
+/nologo /MLd /W3 /Gm /GX /ZI /Od /D "WIN32" /D "_DEBUG" /D "_CONSOLE" /D "_MBCS" /Fp"Debug/tabloid test.pch" /YX /Fo"Debug/" /Fd"Debug/" /FD /GZ /c 
+"C:\My Documents\Research\PosetHomology\Poset Homology\tabloid test\TabloidTest.cpp"
+]
+Creating command line "cl.exe @c:\windows\TEMP\RSPA055.TMP" 
+Creating temporary file "c:\windows\TEMP\RSPA056.TMP" with contents
+[
+kernel32.lib user32.lib gdi32.lib winspool.lib comdlg32.lib advapi32.lib shell32.lib ole32.lib oleaut32.lib uuid.lib odbc32.lib odbccp32.lib kernel32.lib user32.lib gdi32.lib winspool.lib comdlg32.lib advapi32.lib shell32.lib ole32.lib oleaut32.lib uuid.lib odbc32.lib odbccp32.lib /nologo /subsystem:console /incremental:yes /pdb:"Debug/tabloid test.pdb" /debug /machine:I386 /out:"Debug/tabloid test.exe" /pdbtype:sept 
+".\Debug\Partition.obj"
+".\Debug\Perm.obj"
+".\Debug\tabloid.obj"
+".\Debug\TabloidTest.obj"
+]
+Creating command line "link.exe @c:\windows\TEMP\RSPA056.TMP"
+<h3>Output Window</h3>
+Compiling...
+TabloidTest.cpp
+c:\program files\microsoft visual studio\vc98\include\vector(52) : warning C4786: 'std::vector<std::set<int,std::less<int>,std::allocator<int> >,std::allocator<std::set<int,std::less<int>,std::allocator<int> > > >::vector<std::set<int,std::less<int>,std::allocator<int> >,std::allocator<std::set<int,std::less<int>,std::allocator<int> > > >' : identifier was truncated to '255' characters in the debug information
+c:\program files\microsoft visual studio\vc98\include\vector(60) : warning C4786: 'std::vector<std::set<int,std::less<int>,std::allocator<int> >,std::allocator<std::set<int,std::less<int>,std::allocator<int> > > >::~vector<std::set<int,std::less<int>,std::allocator<int> >,std::allocator<std::set<int,std::less<int>,std::allocator<int> > > >' : identifier was truncated to '255' characters in the debug information
+Linking...
+
+
+
+<h3>Results</h3>
+tabloid test.exe - 0 error(s), 2 warning(s)
+</pre>
+</body>
+</html>

@@ -1,0 +1,62 @@
+# Microsoft Developer Studio Generated Dependency File, included by Poset Homology.mak
+
+.\basis.cpp : \
+	"..\Partition.h"\
+	".\basis.h"\
+	".\chain.h"\
+	".\Perm.h"\
+	".\RankSet.h"\
+	".\tableau.h"\
+	".\tabloid.h"\
+	
+
+.\chain.cpp : \
+	".\chain.h"\
+	".\Perm.h"\
+	
+
+.\Hom.cpp : \
+	"..\Partition.h"\
+	".\basis.h"\
+	".\chain.h"\
+	".\Perm Test\Matrix.h"\
+	".\Perm.h"\
+	".\RankSet.h"\
+	".\tableau.h"\
+	".\tabloid.h"\
+	
+
+".\Perm Test\Matrix.cpp" : \
+	".\Perm Test\Matrix.h"\
+	
+
+..\Partition.cpp : \
+	"..\Partition.h"\
+	
+
+.\Perm.cpp : \
+	".\Perm.h"\
+	
+
+.\RankSet.cpp : \
+	"..\Partition.h"\
+	".\chain.h"\
+	".\Perm.h"\
+	".\RankSet.h"\
+	".\tabloid.h"\
+	
+
+.\tableau.cpp : \
+	"..\Partition.h"\
+	".\chain.h"\
+	".\Perm.h"\
+	".\RankSet.h"\
+	".\tableau.h"\
+	".\tabloid.h"\
+	
+
+.\tabloid.cpp : \
+	"..\Partition.h"\
+	".\Perm.h"\
+	".\tabloid.h"\
+	

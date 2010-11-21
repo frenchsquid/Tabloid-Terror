@@ -1,0 +1,21 @@
+
+> n:=6:
+> k:=4:
+> Form := collect(BigKahuna(n,k), lambda):
+> Answer := 0:
+> for i from 1 to nops(Form) do
+>     HodgePart := op([i, nops(op(i,Form))], Form):
+>     if ( nops(HodgePart) = 1) then
+>         Answer := Answer + op(i, Form):
+>     elif (op(2, HodgePart) <= n) then
+>         Answer := Answer + op(i, Form):
+>     fi:
+> od:
+> for i from 1 to nops(Answer) do
+>     Term := op(i, Answer):
+>     Term := subs(lambda=1, Term):
+>     Term := expand(Term):
+>     Term := Truncate(n, Term):
+>     Print(Term);
+>     
+> od:

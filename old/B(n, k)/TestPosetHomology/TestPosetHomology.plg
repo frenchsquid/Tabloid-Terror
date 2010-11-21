@@ -1,0 +1,55 @@
+<html>
+<body>
+<pre>
+<h1>Build Log</h1>
+<h3>
+--------------------Configuration: TestPosetHomology - Win32 Debug--------------------
+</h3>
+<h3>Command Lines</h3>
+Creating temporary file "c:\windows\TEMP\RSPC151.TMP" with contents
+[
+/nologo /MLd /W3 /Gm /GX /ZI /Od /D "WIN32" /D "_DEBUG" /D "_CONSOLE" /D "_MBCS" /Fp"Debug/TestPosetHomology.pch" /YX /Fo"Debug/" /Fd"Debug/" /FD /GZ  /c 
+"C:\My Documents\Research\PosetHomology\Tabloid.cpp"
+"C:\My Documents\Research\PosetHomology\test.cpp"
+]
+Creating command line "cl.exe @c:\windows\TEMP\RSPC151.TMP" 
+Creating temporary file "c:\windows\TEMP\RSPC152.TMP" with contents
+[
+kernel32.lib user32.lib gdi32.lib winspool.lib comdlg32.lib advapi32.lib shell32.lib ole32.lib oleaut32.lib uuid.lib odbc32.lib odbccp32.lib  kernel32.lib user32.lib gdi32.lib winspool.lib comdlg32.lib advapi32.lib shell32.lib ole32.lib oleaut32.lib uuid.lib odbc32.lib odbccp32.lib /nologo /subsystem:console /incremental:yes /pdb:"Debug/TestPosetHomology.pdb" /debug /machine:I386 /out:"Debug/TestPosetHomology.exe" /pdbtype:sept 
+".\Debug\Partition.obj"
+".\Debug\Tabloid.obj"
+".\Debug\test.obj"
+]
+Creating command line "link.exe @c:\windows\TEMP\RSPC152.TMP"
+<h3>Output Window</h3>
+Compiling...
+Tabloid.cpp
+c:\my documents\research\posethomology\tabloid.cpp(14) : error C2039: 'const_iterator' : is not a member of 'Partition'
+        c:\my documents\research\posethomology\partition.h(37) : see declaration of 'Partition'
+c:\my documents\research\posethomology\tabloid.cpp(14) : error C2065: 'const_iterator' : undeclared identifier
+c:\my documents\research\posethomology\tabloid.cpp(14) : error C2146: syntax error : missing ';' before identifier 'iter'
+c:\my documents\research\posethomology\tabloid.cpp(14) : error C2065: 'iter' : undeclared identifier
+c:\my documents\research\posethomology\tabloid.cpp(14) : error C2039: 'begin' : is not a member of 'Partition'
+        c:\my documents\research\posethomology\partition.h(37) : see declaration of 'Partition'
+c:\my documents\research\posethomology\tabloid.cpp(14) : error C2039: 'end' : is not a member of 'Partition'
+        c:\my documents\research\posethomology\partition.h(37) : see declaration of 'Partition'
+c:\my documents\research\posethomology\tabloid.cpp(14) : error C2143: syntax error : missing ')' before '++'
+c:\my documents\research\posethomology\tabloid.cpp(14) : error C2059: syntax error : ';'
+c:\my documents\research\posethomology\tabloid.cpp(14) : error C2059: syntax error : ')'
+c:\my documents\research\posethomology\tabloid.cpp(14) : error C2143: syntax error : missing ';' before '{'
+c:\my documents\research\posethomology\tabloid.cpp(15) : error C2100: illegal indirection
+c:\my documents\research\posethomology\tabloid.cpp(29) : error C2065: 'data' : undeclared identifier
+c:\my documents\research\posethomology\tabloid.cpp(29) : error C2109: subscript requires array or pointer type
+c:\my documents\research\posethomology\tabloid.cpp(29) : error C2440: '=' : cannot convert from 'const class std::vector<int,class std::allocator<int> >' to 'int'
+        No user-defined-conversion operator available that can perform this conversion, or the operator cannot be called
+test.cpp
+c:\my documents\research\posethomology\test.cpp(2) : fatal error C1083: Cannot open include file: 'Tabloid2.h': No such file or directory
+Error executing cl.exe.
+
+
+
+<h3>Results</h3>
+TestPosetHomology.exe - 15 error(s), 0 warning(s)
+</pre>
+</body>
+</html>

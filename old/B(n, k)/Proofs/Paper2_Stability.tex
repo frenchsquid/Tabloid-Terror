@@ -1,0 +1,147 @@
+\documentclass{amsart}
+\usepackage{amsmath,amsthm,amssymb}
+%include these lines if you want to use the LaTeX "theorem" environments
+\newtheorem{theorem}{Theorem}
+\newtheorem{definition}[theorem]{Definition}
+\newtheorem{lemma}[theorem]{Lemma}
+\newtheorem{corollary}[theorem]{Corollary}
+\newtheorem{example}[theorem]{Example}
+%include lines like this if you want to define your own commands 
+%to save typing
+\newcommand{\PROOF}{\noindent {\bf Proof}: }
+\newcommand{\REF}[1]{[\ref{#1}]}
+\newcommand{\Ref}[1]{(\ref{#1})}
+\newcommand{\dt}{\mbox{\rm   dt}}
+\newcommand{\C}{\mathbb{C}}
+\newcommand{\full}{\{1, \ldots, n\}}
+\newcommand{\phat}{\hat{p}}
+\begin{document}
+  \begin{definition} 
+     \begin{enumerate}
+        \item Let $\partial = \sum_i (-1)^i d_i$, where $d_i$ combines 
+        \item If $w$ is a word, let $|w|$ denote the sum of its letters.
+        \item Let $\div$ denote integer division.
+        \item Say that a word $w$ satisfies the $1-k$-condition if every number of $w$ is either a $1$ or a $k$.
+        \item Let $w$ and $v$ be words such that $|w| = |v|$ and the length of $w$ equals the length of $v$. Then say
+              that $w < v$ if $w$ violates the $1-k$-condition either before $v$ or the number that violates the condition
+              is less. 
+        \item Let $N = \{1, \ldots, n \}$.
+     \end{enumerate}
+  \end{definition}
+
+  \begin{theorem} Fix $n$ and $k$. Any cycle in $B(n, k)$ is homologous to a cycle whose type consists solely of ones and
+    k's.
+  \end{theorem}
+  \begin{proof} Let $z$ be a cycle in $B(n, k)$. Decompose $z$ into parts of the homogenous type, $z_1 + \cdots + z_r$. 
+    Without loss of generality suppose that $z_1$ violates the $1-k$ condition minimalily with respect to the other $z_i$.
+    Let $w$ be the type of $z_1$ and let $w = xay$ where $x$ and $y$ are words and $a$ is the first letter not 
+    $1$ or $k$. Finally let $l$ be the index of the place where there is that jump of size $a$. Let $\alpha$ be the last
+    number of $x$.
+
+    The goal is to generate an element $b$ of one dimension higher than $z$ such that 
+    \begin{enumerate}
+      \item $d_{l} (b) = \pm z_1$
+      \item $d_i (b) = 0$ for $i < l$
+      \item For any term, $s$,  of $\partial(b)$ we have $s > z_1$.
+    \end{enumerate}
+    There are three cases to consider   
+    \begin{enumerate}
+      \item[$\alpha=\varnothing$]
+        Let $$z_1 = \sum_{i=1}^u C_i (\varnothing \subset C_{1,i} \subset \cdots \subset C_{r,i} \subset 
+        N).$$ Let $b_i =\sup(C_{1,i})$
+        and let $$b = \sum_{i=1}^u C_i (\varnothing \subset \{b_i\} \subset C_{1,i} \subset 
+        \cdots \subset C_{r,i} \subset N).$$ Then clearly $d_1(b) = -z_1$, and the second condition is true
+        vacuously. Further the type of any term, $s$,  of $\partial(b)$ starts with a $1$, hence type($s) >$ type($w$).
+   
+     \item[$\alpha=k$]
+        Let $$z_1 = \sum_{i=1}^u C_i (\varnothing \subset C_{1,i} \subset \cdots \subset C_{r,i} \subset 
+        N).$$ Hence  
+        $|C_{l+1, i} - C_{l, i}| = a$ and $|C_{l, i} - C_{l-1, i}| = k$.  Then let 
+        $b_i = \sup(C_{l+1,i}-C_{l, i})$ and let $$b = \sum_{i=1}^u C_i (\varnothing \subset C_{1,i} \subset \cdots C_{l,i} 
+        \subset C_{l,i} \cup \{b_i\} \subset C_{l+1, i} \subset \cdots \subset C_{r,i} \subset 
+        N).$$ Obviously $d_l(b) = z$. We next need to show that $d_i(b)=0$
+        for $i < l$. We will use the following fact for $i< l$: $d_i(z_1)=0.$ The reason is that since $z_1$ was chosen 
+        minimally, any term that would cancel $d_i(z_1)$ would violate that minimality condition. It follows immediately  
+        that $d_i(b)=0$ for $i < l-1$. For $d_{l-1}$, this adjoins a jump of size $k$ with a jump of $1$, hence is zero.
+        The last condition is obivious as well.
+      \item[$\alpha=1$] Let $$z_1 = \sum_{i=1}^u C_i (\varnothing \subset C_{1,i} \subset \cdots \subset C_{r,i} \subset 
+        N).$$  Hence  
+        $|C_{l+1, i} - C_{l, i}| = a$ and $|C_{l, i} - C_{l-1, i}| = 1$. 
+        Again $d_l(z_1)=0$ by minimality. Group $\{1, \ldots, u
+        \}$ into the subsets such that for each subset the terms agree at $C_{l-1, i}$ and $C_{l+1, i}$,  
+        Suppose there are $v$ groupings. 
+        So we have
+	  $$z_1 = \sum_{h=1}^v \sum_{f=1}^{d^h} C^h_f (\varnothing \subset C_{1, h, f} \subset \cdots \subset C_{l-1, h} 
+        \subset
+	  C_{l, h} 
+       \cup \{ a_f\} \subset C_{l+1, h} \subset \cdots \subset N).$$ Then for each grouping, i.e. each $h$,  
+       there are two cases.
+	  \begin{enumerate}
+ 	  \item $d^h < a+1$. Then there is a $g^h$ such $g^h \in C_h$, yet $g^h$ equals no $a_f$. In this case let
+	    $$b_h = \sum_{f=1}^{d^h} C^h_f (\varnothing \subset C_{1, h, f} \subset \cdots \subset C_{l-1, h} 
+	    \subset C_{l, h} \cup \{a_f\} \subset C_{l-1, h} \cup  \{a_f, g^h\} 
+          \subset C_{l+1, h} \subset \cdots \subset N).$$ 
+	    
+ 	  \item In this case $d^h = a+1$ so there is no choice for a single element to be omitted. So we will omit them all.
+	    We have terms of the form  
+	    $$\sum_{f \in C_h} C^h_f (\varnothing \subset C_{1, h, f} \subset \cdots 
+	    \subset C_{l-1, h} \subset
+	    C_{l-1, h} \cup \{f\} \subset C_{l+1, h} \subset \cdots \subset N)$$ where 
+          $C_h= C_{l+1, h} - C_{l-1, h}$. So let 
+          $$b_h = \sum_{f \in C_h} \sum_{g \in C_h, g \ne f}
+          C^h_{f, g} (\varnothing \subset C_{1, h, f} \subset \cdots 
+	    \subset C_{l-1, h} \subset
+	    C_{l-1, h} \cup \{f\} \subset C_{l, h} \cup \{f, g\}\subset C_{l+1, h} \subset \cdots \subset N).$$ 
+	    For 
+	    this to work we need to have $$\sum_{g \in C_h, g \ne f} C^h_{f, g} = C^h_f$$ and 
+	    $$\sum_{f \in C_h, g \ne f} C^h_{f, g} = 0.$$ These are $2a$ non-degenerate equations in 
+	    $a^2-a$ variables. Thus for $a>1$ there is a solution.
+       \end{enumerate}
+       Then let $b=\sum_{h=1}^v b_h$. It is clear that $d_l(b)=z$. As above $d_i(z_1) = 0$ for $i < l$. If a term of $b_h$
+       cancelled with some other term in $z_1$ when hit with a $d_i$ then the sets involved can only differ at the ith 
+       spot. So if a term in a $b_h$ cancelled with another term, $s$,  when hit with $d_i$, since the subgroup
+ 	 classifies each term up to the set $C_l$, $s$ must be in $b_h$.
+
+	     
+    \end{enumerate}
+
+    So note that $type(z \pm \partial(b)) > type(z)$. Hence by induction we are done.
+  \end{proof}
+
+  \begin{corollary}
+
+
+    \begin{enumerate}
+      \item $H_w(B(n, k))$ is nonzero if and only if $w$ is a word containing only $1$'s and $k$'s with 
+        no consecutive $k$'s and begins with a 1.
+      \item $H_d(B(n, k))$ is nonzero only if $d$ is congruent to $n \mod k-1$ and $d \ge 2(n \div (k+1)) + (n \mod
+        (k+1)) - 2$
+      \item {\bf Upper Triangularity} Except for $n-2$, $n-k-1$ is an upper bound.
+    \end{enumerate}
+  \end{corollary}
+  \begin{proof}
+  \end{proof}  
+
+\begin{thebibliography}{9}
+\bibitem{GS}
+  M. Gerstenhaber and S.D. Schack,
+  \emph{A Hodge-type decomposition for commutative algebra cohomology,}
+  J. Pure Appl. Algebra {\bf 48} (1987), 229-247.
+\bibitem{HanlonMac}
+  P. Hanlon,
+  \emph{Cyclic homology and the Macdonald conjectures,}
+  Invent. Math. {\bf 86} (1986), 131-159.
+\bibitem{Hanlon}
+  P. Hanlon,
+  \emph{Hodge Structure on Posets}
+\bibitem{Loday}
+  J. L. Loday,
+  \emph{Partition eul\'eriene et op\'erations en homologie cyclique.}
+  C. R. Acad. Sci. Paris S\'er. I Math. {\bf 307} (1988), 283-286.
+\bibitem{Weibel}
+  C. Weibel,
+  \emph{An introduction to homological algebra,}
+  Cambridge University Press, UK, 1994.
+
+\end{thebibliography}
+\end{document}
